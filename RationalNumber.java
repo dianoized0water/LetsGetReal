@@ -7,6 +7,9 @@ public class RationalNumber extends RealNumber{
       nume = 0;
       deno= 1;
     }
+    int a = gcd(nume, deno);
+    deno = deno/a;
+    nume = nume/a;
     numerator = nume;
     denominator = deno;
   }
@@ -64,5 +67,24 @@ public class RationalNumber extends RealNumber{
   private static int lcm(int a, int b){
     int c = gcd(a, b);
     return (int) (a*b/c);
+  }
+
+  public RationalNumber add(RationalNumber other){
+    int a = lcm(denominator, other.denominator);
+    int b = denominator/a;
+    int c = denominator/b;
+
+    int d = b * numerator;
+    int e = c * other.numerator;
+
+    RationalNumber f = new RationalNumber((d+e), a);
+    return f;
+  }
+
+  public RationalNumber subtract(RationalNumber other){
+    int a = other.numerator * -1;
+    RationalNumber b = new RationalNumber(a, other.denominator);
+
+    return add(b);
   }
 }
