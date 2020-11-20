@@ -7,8 +7,8 @@ public class RationalNumber extends RealNumber{
       nume = 0;
       deno= 1;
     }
-    if (demo<0){
-      demo = demo * -1;
+    if (deno<0){
+      deno = deno * -1;
       nume = nume * -1;
     }
     int a = gcd(nume, deno);
