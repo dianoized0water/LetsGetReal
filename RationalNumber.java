@@ -11,11 +11,9 @@ public class RationalNumber extends RealNumber{
       deno = deno * -1;
       nume = nume * -1;
     }
-    int a = gcd(nume, deno);
-    deno = deno/a;
-    nume = nume/a;
     numerator = nume;
     denominator = deno;
+    reduce();
   }
 
   public double getValue(){
@@ -68,20 +66,11 @@ public class RationalNumber extends RealNumber{
     return multiply(other.reciprocal());
   }
 
-  private static int lcm(int a, int b){
-    int c = gcd(a, b);
-    return (int) (a*b/c);
-  }
-
   public RationalNumber add(RationalNumber other){
-    int a = lcm(denominator, other.denominator);
-    int b = denominator/a;
-    int c = denominator/b;
+    int d = other.denominator * numerator;
+    int e = denominator * other.numerator;
 
-    int d = b * numerator;
-    int e = c * other.numerator;
-
-    RationalNumber f = new RationalNumber((d+e), a);
+    RationalNumber f = new RationalNumber((d+e), other.denominator*denominator);
     return f;
   }
 
