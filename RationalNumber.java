@@ -2,6 +2,7 @@ public class RationalNumber extends RealNumber{
   private int numerator, denominator;
 
   public RationalNumber(int nume, int deno){
+    super(0.0);
     if (deno==0){
       nume = 0;
       deno= 1;
@@ -28,7 +29,8 @@ public class RationalNumber extends RealNumber{
   }
 
   public RationalNumber reciprocal(){
-    return new RationalNumber(this.denominator, this.numerator);
+    if (numerator==0) {return new RationalNumber(0, 1);}
+    return new RationalNumber(denominator, numerator);
   }
 
   public String toString(){
@@ -37,9 +39,17 @@ public class RationalNumber extends RealNumber{
       a = "0";
     }
     else {
-      a = numerator + " / " + denominator;
+      a = numerator + "/" + denominator;
     }
     return a;
+  }
+
+  public boolean equals(RationalNumber other){
+    other.reduce();
+    if ((numerator == other.numerator) && (denominator == other.denominator)){
+      return true;
+    }
+    return false;
   }
 
   private static int gcd(int a , int b){
@@ -75,8 +85,7 @@ public class RationalNumber extends RealNumber{
   public RationalNumber add(RationalNumber other){
     int d = other.denominator * numerator;
     int e = denominator * other.numerator;
-
-    return new RationalNumber((d+e), other.denominator*denominator);
+    return new RationalNumber((d+e), (other.denominator*denominator));
   }
 
   public RationalNumber subtract(RationalNumber other){
