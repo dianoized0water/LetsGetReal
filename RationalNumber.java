@@ -29,8 +29,7 @@ public class RationalNumber extends RealNumber{
   }
 
   public RationalNumber reciprocal(){
-    RationalNumber c = new RationalNumber(this.denominator, this.numerator);
-    return c;
+    return new RationalNumber(this.denominator, this.numerator);
   }
 
   public String toString(){
@@ -58,8 +57,7 @@ public class RationalNumber extends RealNumber{
   public RationalNumber multiply(RationalNumber other){
     int a = numerator * other.getNumerator();
     int b = denominator * other.getDenominator();
-    RationalNumber c = new RationalNumber(a, b);
-    return c;
+    return = new RationalNumber(a, b);
   }
 
   public RationalNumber divide(RationalNumber other){
@@ -70,8 +68,7 @@ public class RationalNumber extends RealNumber{
     int d = other.denominator * numerator;
     int e = denominator * other.numerator;
 
-    RationalNumber f = new RationalNumber((d+e), other.denominator*denominator);
-    return f;
+    return = new RationalNumber((d+e), other.denominator*denominator);
   }
 
   public RationalNumber subtract(RationalNumber other){
