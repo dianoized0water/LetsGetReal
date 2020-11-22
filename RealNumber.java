@@ -14,11 +14,12 @@ public class RealNumber{
   }
 
   public boolean equals(RealNumber other){
-    double a = Math.abs(value - other.value);
-    if (a < (0.00001*value)){
-      return true;
+    double a = value;
+    double b = other.value;
+    if ((a==0) || (b==0)){
+      return (a==b);
     }
-    return false;
+    else ((Math.abs(a-b)*100 / Math.abs(a+b)/2) < 0.001);
   }
 
   public RealNumber add(RealNumber other){
