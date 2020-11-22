@@ -57,7 +57,7 @@ public class RationalNumber extends RealNumber{
   public RationalNumber multiply(RationalNumber other){
     int a = numerator * other.getNumerator();
     int b = denominator * other.getDenominator();
-    return = new RationalNumber(a, b);
+    return new RationalNumber(a, b);
   }
 
   public RationalNumber divide(RationalNumber other){
@@ -68,7 +68,7 @@ public class RationalNumber extends RealNumber{
     int d = other.denominator * numerator;
     int e = denominator * other.numerator;
 
-    return = new RationalNumber((d+e), other.denominator*denominator);
+    return new RationalNumber((d+e), other.denominator*denominator);
   }
 
   public RationalNumber subtract(RationalNumber other){
