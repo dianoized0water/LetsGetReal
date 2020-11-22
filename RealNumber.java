@@ -5,6 +5,10 @@ public class RealNumber{
     value = v;
   }
 
+  public String toString(){
+    return ""+value;
+  }
+
   public double getValue(){
     return value;
   }
@@ -18,22 +22,18 @@ public class RealNumber{
   }
 
   public RealNumber add(RealNumber other){
-    RealNumber c = new RealNumber(this.value + other.value);
-    return c;
+    return new RealNumber(this.value + other.value);
   }
 
   public RealNumber multiply(RealNumber other){
-    RealNumber c = new RealNumber(this.value * other.value);
-    return c;
+    return new RealNumber(this.value * other.value);
   }
 
   public RealNumber divide(RealNumber other){
-    RealNumber c = new RealNumber(this.value / other.value);
-    return c;
+    return new RealNumber(this.value / other.value);
   }
 
   public RealNumber subtract(RealNumber other){
-    RealNumber c = new RealNumber(this.value - other.value);
-    return c;
+    return new RealNumber(this.value - other.value);
   }
 }
