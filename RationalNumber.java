@@ -33,10 +33,18 @@ public class RationalNumber extends RealNumber{
   }
 
   public String toString(){
-    return ""+getValue();
+    String a = "";
+    if (numerator==0){
+      a = "0";
+    }
+    else {
+      a = numerator + " / " + denominator;
+    }
+    return a;
   }
 
   private static int gcd(int a , int b){
+    if (a<0){a=-a;}
     while (!(a==b)){
       if (a>b){
         a = a-b;
