@@ -2,7 +2,6 @@ public class RationalNumber extends RealNumber{
   private int numerator, denominator;
 
   public RationalNumber(int nume, int deno){
-    super((double) nume*1.0/deno);
     if (deno==0){
       nume = 0;
       deno= 1;
@@ -45,6 +44,7 @@ public class RationalNumber extends RealNumber{
 
   private static int gcd(int a , int b){
     if (a<0){a=-a;}
+    if (b<0){b=-b;}
     while (!(a==b)){
       if (a>b){
         a = a-b;
