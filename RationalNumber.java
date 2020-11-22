@@ -2,7 +2,7 @@ public class RationalNumber extends RealNumber{
   private int numerator, denominator;
 
   public RationalNumber(int nume, int deno){
-    super((double)(nume/deno));
+    super((double) nume*1.0/deno);
     if (deno==0){
       nume = 0;
       deno= 1;
@@ -17,7 +17,7 @@ public class RationalNumber extends RealNumber{
   }
 
   public double getValue(){
-    return (double) (numerator / denominator);
+    return (numerator*1.0 / denominator);
   }
 
   public int getNumerator(){
@@ -77,7 +77,6 @@ public class RationalNumber extends RealNumber{
   public RationalNumber subtract(RationalNumber other){
     int a = other.numerator * -1;
     RationalNumber b = new RationalNumber(a, other.denominator);
-
     return add(b);
   }
 }
