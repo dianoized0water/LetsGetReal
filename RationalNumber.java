@@ -16,7 +16,7 @@ public class RationalNumber extends RealNumber{
     reduce();
   }
 
-  public double getValue(){
+  public double getValue(){ // overrides
     return (numerator*1.0 / denominator);
   }
 
@@ -53,7 +53,6 @@ public class RationalNumber extends RealNumber{
 
   private static int gcd(int a , int b){
     if (a<0){a=-a;}
-    if (b<0){b=-b;}
     while (!(a==b)){
       if (a>b){
         a = a-b;
