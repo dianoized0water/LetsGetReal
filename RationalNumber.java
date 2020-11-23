@@ -37,6 +37,9 @@ public class RationalNumber extends RealNumber{
     if (numerator==0){
       a = "0";
     }
+    if (denominator==1){
+      a += numerator;
+    }
     else {
       a = numerator + "/" + denominator;
     }
