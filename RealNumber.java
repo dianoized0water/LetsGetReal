@@ -19,7 +19,9 @@ public class RealNumber{
     if ((a==0) || (b==0)){
       return (a==b);
     }
-    else ((Math.abs(a-b)*100 / Math.abs(a+b)/2) < 0.001);
+    else {
+      return ((Math.abs(a-b)*100 / Math.abs(a+b)/2) < 0.001);
+    }
   }
 
   public RealNumber add(RealNumber other){
