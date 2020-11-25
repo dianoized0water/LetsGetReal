@@ -2,7 +2,7 @@ public abstract class Number{
   public abstract double getValue();
 
   public int compareTo(Number other){
-    double a = (this.getValue()==other.getValue());
+    double a = (this.getValue()-other.getValue());
     if (a==0){
       return 0;
     }
