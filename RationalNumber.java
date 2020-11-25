@@ -14,10 +14,11 @@ public class RationalNumber extends RealNumber{
     numerator = nume;
     denominator = deno;
     reduce();
+    value = numerator*1.0 / denominator;
   }
 
   public double getValue(){ // overrides
-    return (numerator*1.0 / denominator);
+    return value;
   }
 
   public int getNumerator(){
