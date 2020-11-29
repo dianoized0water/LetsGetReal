@@ -46,7 +46,6 @@ public class RationalNumber extends RealNumber{
   }
 
   public boolean equals(RationalNumber other){
-    other.reduce();
     return ((numerator == other.numerator) && (denominator == other.denominator));
   }
 
