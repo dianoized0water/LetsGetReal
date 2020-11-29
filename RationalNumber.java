@@ -13,11 +13,10 @@ public class RationalNumber extends RealNumber{
     numerator = nume;
     denominator = deno;
     reduce();
-    value = numerator*1.0 / denominator;
   }
 
   public double getValue(){ // overrides
-    return value;
+    return 1.0 * numerator / denominator;
   }
 
   public int getNumerator(){
@@ -45,12 +44,12 @@ public class RationalNumber extends RealNumber{
     }
     return a;
   }
-
+/*
   public boolean equals(RationalNumber other){
     other.reduce();
     return ((numerator == other.numerator) && (denominator == other.denominator));
   }
-
+*/
   private static int gcd(int a , int b){
     if (a<0){a=-a;}
     while (!(a==b)){
