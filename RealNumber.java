@@ -12,7 +12,7 @@ public class RealNumber{
   public double getValue(){
     return value;
   }
-
+/*
   public boolean equals(RealNumber other){
     double a = value;
     double b = other.value;
@@ -23,7 +23,7 @@ public class RealNumber{
       return ((Math.abs(a-b)*100 / Math.abs(a+b)/2) < 0.001);
     }
   }
-
+*/
   public RealNumber add(RealNumber other){
     return new RealNumber(this.value + other.value);
   }
