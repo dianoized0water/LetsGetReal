@@ -33,17 +33,15 @@ public class RationalNumber extends RealNumber{
   }
 
   public String toString(){
-    String a = "";
     if (numerator==0){
-      a = "0";
+      return "0";
     }
     if (denominator==1){
-      a += numerator;
+      return ""+numerator;
     }
     else {
-      a = numerator + "/" + denominator;
+      return numerator + "/" + denominator;
     }
-    return a;
   }
 
   public boolean equals(RationalNumber other){
@@ -51,16 +49,12 @@ public class RationalNumber extends RealNumber{
   }
 
   private static int gcd(int a , int b){
-    if (a<0){a=-a;}
-    while (!(a==b)){
-      if (a>b){
-        a = a-b;
-      }
-      else {
-        b = b-a;
-      }
+    int gcd = 1;
+    for(int i=1; i<=a && i<=b; i++){
+      if (a%i==0 && b%i==0)
+      gcd = i;
     }
-    return a;
+    return gcd;
   }
 
   private void reduce(){
@@ -70,9 +64,7 @@ public class RationalNumber extends RealNumber{
   }
 
   public RationalNumber multiply(RationalNumber other){
-    int a = numerator * other.getNumerator();
-    int b = denominator * other.getDenominator();
-    return new RationalNumber(a, b);
+    return new RationalNumber(numerator * other.getNumerator(), denominator * other.getDenominator());
   }
 
   public RationalNumber divide(RationalNumber other){
@@ -80,14 +72,12 @@ public class RationalNumber extends RealNumber{
   }
 
   public RationalNumber add(RationalNumber other){
-    int d = other.denominator * numerator;
-    int e = denominator * other.numerator;
-    return new RationalNumber((d+e), (other.denominator*denominator));
+    int d = other.getDenominator() * numerator;
+    int e = denominator * other.getNumerator();
+    return new RationalNumber((d+e), (other.getDenominator()*denominator));
   }
 
   public RationalNumber subtract(RationalNumber other){
-    int a = other.numerator * -1;
-    RationalNumber b = new RationalNumber(a, other.denominator);
-    return add(b);
+    return add(other.multiply(new RationalNumber(-1, 1)));
   }
 }
